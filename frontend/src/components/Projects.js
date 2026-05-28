@@ -9,7 +9,7 @@ function Projects() {
   useEffect(() => {
 
     axios
-      .get("https://personal-portfolio-fullstack-r2s1.onrender.com")
+      .get("https://personal-portfolio-fullstack-r2s1.onrender.com/projects")
 
       .then((response) => {
 
