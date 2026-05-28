@@ -9,7 +9,7 @@ function Projects() {
   useEffect(() => {
 
     axios
-      .get("http://localhost:5000/projects")
+      .get("https://personal-portfolio-fullstack-r2s1.onrender.com")
 
       .then((response) => {
 
