@@ -36,7 +36,7 @@ function Contact() {
 
       const response = await axios.post(
 
-        "http://localhost:5000/contact",
+        "https://personal-portfolio-fullstack-r2s1.onrender.com/contact",
 
         formData
 
