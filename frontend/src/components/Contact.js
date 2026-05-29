@@ -34,7 +34,7 @@ function Contact() {
 
       const response = await axios.post(
 
-        "https://YOUR-BACKEND-URL.onrender.com/contact",
+        "https://personal-portfolio-fullstack-r2s1.onrender.com/contact",
 
         formData
 
@@ -68,7 +68,10 @@ function Contact() {
 
       <h2>Contact Me</h2>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form
+        className="contact-form"
+        onSubmit={handleSubmit}
+      >
 
         <input
           type="text"
