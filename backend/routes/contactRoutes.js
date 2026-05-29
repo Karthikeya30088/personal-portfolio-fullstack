@@ -4,38 +4,34 @@ const router = express.Router();
 
 const db = require("../db");
 
-router.post("/", (req, res) => {
+/* SEND CONTACT MESSAGE */
 
-    console.log(req.body);
+router.post("/", (req, res) => {
 
     const { name, email, message } = req.body;
 
+    console.log(req.body);
+
     const sql =
-    "INSERT INTO contacts(name, email, message) VALUES (?, ?, ?)";
+        "INSERT INTO contacts(name, email, message) VALUES (?, ?, ?)";
 
-    db.query(
+    db.query(sql, [name, email, message], (err, result) => {
 
-        sql,
+        if (err) {
 
-        [name, email, message],
+            console.log(err);
 
-        (err, result) => {
-
-            if (err) {
-
-                console.log(err);
-
-                res.status(500).send("Database Error");
-
-            } else {
-
-                res.send("Message Sent Successfully");
-
-            }
+            return res.status(500).json({
+                error: "Database Error"
+            });
 
         }
 
-    );
+        res.status(200).json({
+            message: "Message Sent Successfully"
+        });
+
+    });
 
 });
 
